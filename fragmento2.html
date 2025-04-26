@@ -13,7 +13,6 @@
       color: white;
       font-family: monospace;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -57,21 +56,28 @@
       max-width: 90%;
       filter: contrast(150%) brightness(120%) grayscale(100%);
     }
+    #error {
+      color: red;
+      display: none;
+      font-size: 0.8em;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
   <div id="container">
     <div id="unlock">
-      <p>Código requerido.</p>
+      <p>Código de acceso requerido.</p>
       <input type="text" id="codeInput" placeholder="Ingrese código">
       <button onclick="checkCode()">Validar</button>
-      <p id="error" style="color: red; display: none; font-size: 0.8em; margin-top: 10px;">Código incorrecto.</p>
+      <p id="error">Código inválido.</p>
     </div>
     <div id="content">
-      <p>La segunda señal está activa.</p>
-      <p>Coordenada parcial: [a definir]</p>
+      <p>La segunda señal ya está activa.</p>
+      <p>[Coordenada o pista visual fragmentada]</p>
       <img src="glitch2.png" alt="Fragmento visual" />
       <p style="opacity:0.5; font-size:0.8em; margin-top:20px;">Seguimiento confirmado.</p>
+      <p style="opacity:0.5; font-size:0.8em; margin-top:10px;">Código de acceso: 9LM</p> <!-- Código para el próximo fragmento -->
     </div>
   </div>
 
@@ -80,7 +86,7 @@
 
     function checkCode() {
       const code = document.getElementById('codeInput').value.trim().toUpperCase();
-      if (code === "ECO4") { // <<< acá pones el código correcto
+      if (code === "X7C") { // Código correcto para desbloquear
         document.getElementById('unlock').style.display = 'none';
         document.getElementById('content').style.display = 'flex';
       } else {
