@@ -51,16 +51,22 @@
       font-size: 1em;
       cursor: pointer;
     }
-    img {
-      margin-top: 20px;
-      max-width: 90%;
-      filter: contrast(150%) brightness(120%) grayscale(100%);
-    }
     #error {
       color: red;
       display: none;
       font-size: 0.8em;
       margin-top: 10px;
+    }
+    .hint-text {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.5s;
+      font-size: 1.2em;
+      line-height: 1.6em;
+      max-width: 90%;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -73,11 +79,10 @@
       <p id="error">Código inválido.</p>
     </div>
     <div id="content">
-      <p>La segunda señal ya está activa.</p>
-      <p>[Coordenada o pista visual fragmentada]</p>
-      <img src="glitch2.png" alt="Fragmento visual" />
-      <p style="opacity:0.5; font-size:0.8em; margin-top:20px;">Seguimiento confirmado.</p>
-      <p style="opacity:0.5; font-size:0.8em; margin-top:10px;">Código de acceso: 9LM</p> <!-- Código para el próximo fragmento -->
+      <div class="hint-text">
+        <p>-34.90... , -56.20...</p>
+        <p style="opacity:0.5; font-size:0.8em; margin-top:20px;">Código de acceso: 9LM</p> <!-- Código para fragmento 3 -->
+      </div>
     </div>
   </div>
 
@@ -86,7 +91,7 @@
 
     function checkCode() {
       const code = document.getElementById('codeInput').value.trim().toUpperCase();
-      if (code === "X7C") { // Código correcto para desbloquear
+      if (code === "X7C") { // Código correcto
         document.getElementById('unlock').style.display = 'none';
         document.getElementById('content').style.display = 'flex';
       } else {
