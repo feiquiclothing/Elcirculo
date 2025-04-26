@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mitad 1/2</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100dvh;
+      text-align: center;
+    }
+    #content {
+      animation: fadeIn 1s ease forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 90%;
+      padding: 20px;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <p>Mitad 1/2</p>
+    <p>-34.9056</p> <!-- primera parte de la coordenada -->
+  </div>
+</body>
+</html>
