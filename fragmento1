@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Fragmento 1/8</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100dvh;
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: background-color 0.5s ease;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100dvh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    #content {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      max-width: 90%;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    img {
+      margin-top: 20px;
+      max-width: 90%;
+      filter: contrast(150%) brightness(110%) grayscale(100%);
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 1s;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="content">
+      <p>La primera señal ya está activa.</p>
+      <p>34.9056° S — 56.2030° W</p>
+      <img src="glitch_plaza_independencia.png" alt="Fragmento visual" />
+      <p style="opacity:0.5; font-size:0.8em; margin-top:20px;">Buscá. No preguntes.</p>
+    </div>
+  </div>
+</body>
+</html>
