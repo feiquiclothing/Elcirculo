@@ -16,7 +16,6 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      transition: background-color 0.5s ease;
     }
     #container {
       display: flex;
@@ -30,12 +29,10 @@
     #content {
       opacity: 0;
       animation: fadeIn 1s ease forwards;
-      font-size: 1.1em;
-      line-height: 1.6em;
-      max-width: 90%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: 90%;
     }
     @keyframes fadeIn {
       to { opacity: 1; }
@@ -43,7 +40,7 @@
     img {
       margin-top: 20px;
       max-width: 90%;
-      filter: contrast(150%) brightness(120%) grayscale(100%);
+      filter: contrast(150%) brightness(110%) grayscale(100%);
       opacity: 0;
       animation: fadeIn 1.5s ease forwards;
       animation-delay: 1s;
@@ -53,11 +50,8 @@
 <body>
   <div id="container">
     <div id="content">
-      <p>La primera señal ya está activa.</p>
-      <p>34.9056° S — 56.2030° W</p>
-      <img src="glitch_plaza_independencia.png" alt="Fragmento visual" />
-      <p style="opacity:0.5; font-size:0.8em; margin-top:20px;">Buscá. No preguntes.</p>
-      <p style="opacity:0.5; font-size:0.8em; margin-top:10px;">Código de acceso: X7C</p>
+      <img src="mapa_glitchado.png" alt="Fragmento visual" />
+      <p style="opacity:0.5; font-size:0.8em; margin-top:20px;">Código de acceso: X7C</p>
     </div>
   </div>
 </body>
