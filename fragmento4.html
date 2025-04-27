@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Fragmento 4/13</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100dvh;
+      text-align: center;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100dvh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    #unlock, #content {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    input {
+      margin-top: 20px;
+      padding: 10px;
+      font-family: monospace;
+      background: none;
+      border: 1px solid white;
+      color: white;
+      font-size: 1em;
+      text-align: center;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-family: monospace;
+      background: none;
+      border: 1px solid white;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 90%;
+      filter: contrast(150%) brightness(110%) grayscale(100%);
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+    #error {
+      color: red;
+      display: none;
+      font-size: 0.8em;
+      margin-top: 10px;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="unlock">
+      <p>Código de acceso requerido.</p>
+      <input type="text" id="codeInput" placeholder="Ingrese código">
+      <button onclick="checkCode()">Validar</button>
+      <p id="error">Código inválido.</p>
+    </div>
+    <div id="content">
+      <img src="glitch_fragmento4.png" alt="Fragmento visual" />
+      <p style="opacity:0.5; font-size:0.8em; margin-top:20px;">Código de acceso: T2V</p> <!-- Código para fragmento 5 -->
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('unlock').style.display = 'flex';
+
+    function checkCode() {
+      const code = document.getElementById('codeInput').value.trim().toUpperCase();
+      if (code === "9LM") { // Código correcto
+        document.getElementById('unlock').style.display = 'none';
+        document.getElementById('content').style.display = 'flex';
+      } else {
+        document.getElementById('error').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
